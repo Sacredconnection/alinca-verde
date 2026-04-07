@@ -113,43 +113,37 @@ main { padding-bottom: 42px; }
   position: relative;
   overflow: hidden;
   padding: clamp(74px, 9vw, 120px) 0 clamp(54px, 6vw, 74px);
+  background-image: url("https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
 }
 
 .hero::before,
 .hero::after {
   content: '';
   position: absolute;
-  border-radius: 999px;
+  inset: 0;
   pointer-events: none;
 }
 
 .hero::before {
-  width: 520px;
-  height: 520px;
-  right: -160px;
-  top: -140px;
-  background: radial-gradient(circle, rgba(37, 83, 46, 0.28), transparent 65%);
+  background: radial-gradient(circle at top left, rgba(30, 70, 36, 0.44), transparent 32%);
 }
 
 .hero::after {
-  width: 540px;
-  height: 540px;
-  left: -240px;
-  bottom: -200px;
-  background: radial-gradient(circle, rgba(189, 229, 143, 0.28), transparent 66%);
+  background: linear-gradient(180deg, rgba(10, 30, 18, 0.68), rgba(10, 30, 18, 0.24));
 }
 
 .hero-wrap {
   position: relative;
   z-index: 2;
-  border: 1px solid rgba(16, 35, 19, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 28px;
-  background-image:
-    radial-gradient(circle at 20% 20%, rgba(40, 119, 64, 0.12), transparent 22%),
-    radial-gradient(circle at 78% 12%, rgba(109, 165, 94, 0.14), transparent 20%),
-    linear-gradient(160deg, rgba(247, 252, 239, 0.96), rgba(227, 242, 206, 0.94));
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(12px);
   padding: clamp(28px, 5vw, 54px);
-  box-shadow: 0 30px 80px rgba(20, 42, 28, 0.16);
+  box-shadow: 0 30px 80px rgba(10, 24, 14, 0.22);
   animation: lift-in 550ms ease;
 }
 
@@ -187,39 +181,6 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-}
-
-.hero-forest {
-  margin-top: 28px;
-  width: 100%;
-  min-height: 240px;
-  border-radius: 26px;
-  background: linear-gradient(180deg, rgba(39, 91, 43, 0.95), rgba(22, 55, 29, 0.96));
-  position: relative;
-  overflow: hidden;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12), 0 18px 40px rgba(15, 43, 21, 0.16);
-}
-
-.hero-forest::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.16), transparent 18%),
-    radial-gradient(circle at 85% 12%, rgba(255, 255, 255, 0.1), transparent 20%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.07), transparent 55%);
-}
-
-.hero-forest::after {
-  content: '';
-  position: absolute;
-  left: -10%;
-  right: -10%;
-  bottom: 0;
-  height: 70%;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 180'%3E%3Cpath fill='%231f4f2b' d='M0 112 Q80 82 160 102 T320 94 T440 110 T560 86 T680 118 T780 96 T880 112 T980 94 T1080 118 T1200 100 V180 H0 Z'/%3E%3Cpath fill='%23386634' d='M0 132 Q100 100 220 120 T380 105 T520 134 T660 112 T780 138 T900 118 T1040 142 T1200 120 V180 H0 Z'/%3E%3C/svg%3E") center/cover no-repeat;
-  opacity: 0.92;
-  transform: translateY(10%);
 }
 
 .btn {
