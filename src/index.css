@@ -113,9 +113,9 @@ main { padding-bottom: 42px; }
   position: relative;
   overflow: hidden;
   padding: clamp(74px, 9vw, 120px) 0 clamp(54px, 6vw, 74px);
-  background-image: url("https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1600&q=80");
+  background-image: url("https://images.unsplash.com/photo-1501927023255-9063be98970a?auto=format&fit=crop&w=1600&q=80");
   background-size: cover;
-  background-position: center 35%;
+  background-position: center 30%;
   background-repeat: no-repeat;
 }
 
