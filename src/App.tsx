@@ -1,189 +1,117 @@
-﻿import {ArrowRight, Building2, Factory, Handshake, Leaf, MapPin, ShieldCheck, Sprout, Trees, TrendingUp} from 'lucide-react';
+﻿import {ArrowRight, CheckCircle2, CircleHelp, Leaf, ShieldCheck, Sprout, TrendingUp} from 'lucide-react';
 
-const links = [
-  {label: 'Projeto', href: '#projeto'},
+const navLinks = [
   {label: 'Modelo', href: '#modelo'},
-  {label: 'Parcerias', href: '#parcerias'},
-  {label: 'Governança', href: '#governanca'},
-  {label: 'Impacto', href: '#impacto'},
-  {label: 'Contato', href: '#contato'},
+  {label: 'Resultados', href: '#resultados'},
+  {label: 'Para quem', href: '#publico'},
+  {label: 'FAQ', href: '#faq'},
 ];
 
-const fases = [
+const beneficios = [
   {
-    etapa: '01',
-    titulo: 'Recuperação de solo',
-    texto:
-      'Mapeamento técnico e manejo de áreas degradadas no Acre para retomar fertilidade, biodiversidade e capacidade produtiva.',
+    titulo: 'Receita recorrente com floresta em pe',
+    texto: 'Integramos producao, processamento e ativos ambientais para gerar fluxo de caixa de longo prazo.',
+    icon: TrendingUp,
+  },
+  {
+    titulo: 'Governanca pronta para due diligence',
+    texto: 'Operacao com rastreabilidade, metricas de impacto e conformidade para parceiros institucionais.',
+    icon: ShieldCheck,
+  },
+  {
+    titulo: 'Execucao local de ponta a ponta',
+    texto: 'Equipe tecnica em campo no Acre com monitoramento continuo e coordenacao operacional centralizada.',
     icon: Sprout,
   },
+];
+
+const etapas = [
   {
-    etapa: '02',
-    titulo: 'Sistemas agroflorestais',
-    texto:
-      'Implantação de Açaí, Cacau e madeira certificada em consórcios com espécies nativas para produção e restauração simultâneas.',
-    icon: Trees,
+    passo: '01',
+    titulo: 'Diagnostico e desenho tecnico',
+    texto: 'Levantamento agronomico, mapeamento de risco e plano de implantacao por area.',
   },
   {
-    etapa: '03',
-    titulo: 'Processamento integrado',
-    texto:
-      'Verticalização local para manter valor agregado na origem, fortalecer cadeias regionais e melhorar margem do território.',
-    icon: Factory,
+    passo: '02',
+    titulo: 'Implantacao produtiva regenerativa',
+    texto: 'Sistemas agroflorestais combinando especies nativas e cadeias bioeconomicas de alta demanda.',
   },
   {
-    etapa: '04',
-    titulo: 'Ativos ambientais',
-    texto:
-      'Geração de créditos de carbono com monitoramento satelital e rastreabilidade completa para mercados regulados e voluntários.',
-    icon: Leaf,
+    passo: '03',
+    titulo: 'Monetizacao e escala',
+    texto: 'Comercializacao de produtos e creditos ambientais com governanca para expansao regional.',
   },
 ];
 
-const produtos = [
-  ['Açaí nativo', 'Origem rastreável, padrão premium e logística de escala.'],
-  ['Cacau de sombra', 'Modelo agroflorestal com produtividade e conservação do dossel.'],
-  ['Madeira certificada', 'Manejo de baixo impacto orientado por conformidade internacional.'],
-  ['Óleos e resinas', 'Extração botânica para cosméticos, farmacêutica e especialidades.'],
+const provas = [
+  ['10.000 ha', 'em estruturacao para restauracao produtiva'],
+  ['500+ familias', 'envolvidas no territorio ao longo da cadeia'],
+  ['100% rastreavel', 'da origem ao ativo comercializado'],
+  ['3,5x potencial', 'de valorizacao patrimonial da terra'],
 ];
 
-const numeros = [
-  ['10 mil', 'hectares de restauração planejada'],
-  ['100%', 'sistemas nativos e certificados'],
-  ['500+', 'famílias beneficiadas'],
-  ['3,5x', 'potencial de valorização da terra'],
+const perguntas = [
+  {
+    pergunta: 'Qual perfil de parceiro faz sentido para a AVA?',
+    resposta: 'Estruturamos modelos para investidores, empresas compradoras de creditos e produtores com area disponivel.',
+  },
+  {
+    pergunta: 'Quando o projeto comeca a gerar retorno?',
+    resposta: 'As primeiras receitas vem da cadeia bioeconomica e o retorno acelera com o amadurecimento do portfolio de ativos ambientais.',
+  },
+  {
+    pergunta: 'Como a governanca e garantida?',
+    resposta: 'Operamos com monitoramento continuo, indicadores publicos de desempenho e auditorias externas por padrao.',
+  },
 ];
 
 export default function App() {
   return (
     <div className="site">
-      <a className="skip" href="#conteudo">Pular para conteúdo</a>
+      <a className="skip" href="#conteudo">Pular para conteudo</a>
 
-      <header className="topbar" aria-label="Cabeçalho">
+      <header className="topbar">
         <div className="frame topbar-inner">
-          <a className="logo" href="#topo">Aliança Verde Amazônia</a>
-          <nav aria-label="Navegação principal">
+          <a className="brand" href="#topo">Alianca Verde Amazonia</a>
+          <nav aria-label="Navegacao principal">
             <ul className="menu">
-              {links.map((item) => (
+              {navLinks.map((item) => (
                 <li key={item.href}>
                   <a href={item.href}>{item.label}</a>
                 </li>
               ))}
             </ul>
           </nav>
-          <a className="chip" href="#contato">Fale com a AVA</a>
+          <a className="btn mini" href="#contato">Falar com especialista</a>
         </div>
       </header>
 
-      <section className="hero" id="topo">
-        <div className="frame hero-grid" id="projeto">
-          <div>
-            <p className="kicker">Restauração com retorno econômico</p>
-            <h1>Floresta em pé como infraestrutura produtiva do século XXI.</h1>
+      <main id="conteudo">
+        <section className="hero" id="topo">
+          <div className="frame hero-wrap">
+            <p className="eyebrow"></p>
+            <h1>Transforme area degradada em um ativo regenerativo com retorno economico.</h1>
             <p className="lead">
-              Projeto de 10.000 hectares no Acre unindo restauração florestal,
-              bioeconomia e governança para criar valor permanente no território.
+              A AVA estrutura projetos de restauracao produtiva no Acre com execucao local,
+              governanca institucional e comercializacao em cadeias de alto valor.
             </p>
             <div className="hero-actions">
-              <a className="btn solid" href="#contato">Conversar com a equipe</a>
-              <a className="btn line" href="#modelo">Ver o modelo</a>
+              <a className="btn primary" href="#contato">Quero uma proposta</a>
+              <a className="btn ghost" href="#modelo">Como funciona <ArrowRight size={16} aria-hidden="true" /></a>
             </div>
-          </div>
-
-          <aside className="hero-panel" aria-label="Pilares">
-            <h2>Pilares do projeto</h2>
-            <ul>
-              <li><ShieldCheck size={16} aria-hidden="true" /> Governança institucional robusta</li>
-              <li><TrendingUp size={16} aria-hidden="true" /> Bioeconomia com valor agregado local</li>
-              <li><Handshake size={16} aria-hidden="true" /> Parceria com produtores e comunidades</li>
+            <ul className="trust-badges" aria-label="Credenciais">
+              <li><CheckCircle2 size={16} aria-hidden="true" /> Due diligence simplificada</li>
+              <li><Leaf size={16} aria-hidden="true" /> Modelo com impacto ambiental mensuravel</li>
+              <li><ShieldCheck size={16} aria-hidden="true" /> Governanca e rastreabilidade integradas</li>
             </ul>
-          </aside>
-        </div>
-      </section>
-
-      <main id="conteudo">
-        <section className="frame manifesto" aria-labelledby="manifesto-title">
-          <div className="manifesto-mark">AVA</div>
-          <div>
-            <p className="kicker">Manifesto</p>
-            <h2 id="manifesto-title">A floresta em pé é o ativo mais estratégico deste século.</h2>
-            <p>
-              A Aliança Verde Amazônia parte de uma premissa objetiva: regeneração não é custo,
-              é investimento. Transformamos áreas degradadas em sistemas de alta performance,
-              onde biodiversidade e renda avançam juntas.
-            </p>
           </div>
         </section>
 
-        <section className="frame modelo" id="modelo" aria-labelledby="modelo-title">
-          <p className="kicker">Modelo operacional</p>
-          <h2 id="modelo-title">Engenharia de regeneração em quatro etapas</h2>
-          <ol className="timeline">
-            {fases.map((fase) => {
-              const Icon = fase.icon;
-              return (
-                <li key={fase.titulo}>
-                  <div className="step">{fase.etapa}</div>
-                  <article>
-                    <h3><Icon size={18} aria-hidden="true" /> {fase.titulo}</h3>
-                    <p>{fase.texto}</p>
-                  </article>
-                </li>
-              );
-            })}
-          </ol>
-        </section>
-
-        <section className="frame split" id="parcerias" aria-labelledby="parcerias-title">
-          <div>
-            <p className="kicker">Parcerias</p>
-            <h2 id="parcerias-title">Capital, execução e território no mesmo alinhamento.</h2>
-          </div>
-          <div className="notes">
-            <p>Produtor entra com a terra; AVA entra com capital, técnica e gestão.</p>
-            <p>Comunidades locais participam da evolução do projeto no longo prazo.</p>
-            <p>Conversão para agrofloresta eleva produtividade e valor patrimonial.</p>
-          </div>
-        </section>
-
-        <section className="frame portfolio" aria-labelledby="portfolio-title">
-          <div className="title-line">
-            <div>
-              <p className="kicker">Portfólio bioeconômico</p>
-              <h2 id="portfolio-title">Produtos de uma floresta viva</h2>
-            </div>
-            <a href="#contato">Especificações técnicas <ArrowRight size={15} aria-hidden="true" /></a>
-          </div>
-          <div className="product-list">
-            {produtos.map(([titulo, texto]) => (
-              <article key={titulo}>
-                <h3>{titulo}</h3>
-                <p>{texto}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="frame split governanca" id="governanca" aria-labelledby="gov-title">
-          <div>
-            <p className="kicker">Governança</p>
-            <h2 id="gov-title">Rigor institucional e segurança jurídica.</h2>
-            <p>
-              Compliance, auditoria externa e rastreabilidade de ponta a ponta da cadeia produtiva.
-            </p>
-          </div>
-          <ul>
-            <li><ShieldCheck size={16} aria-hidden="true" /> FSC - manejo florestal responsável</li>
-            <li><ShieldCheck size={16} aria-hidden="true" /> Verra VCS + CCB - padrão internacional de carbono</li>
-            <li><ShieldCheck size={16} aria-hidden="true" /> SIF - qualidade e conformidade agroindustrial</li>
-          </ul>
-        </section>
-
-        <section className="frame impacto" id="impacto" aria-labelledby="impacto-title">
-          <p className="kicker">Impacto</p>
-          <h2 id="impacto-title">Escala com retorno social, ambiental e econômico</h2>
-          <div className="metrics">
-            {numeros.map(([valor, legenda]) => (
+        <section className="frame section" id="resultados" aria-labelledby="resultado-title">
+          <p className="section-tag">RESULTADOS ESPERADOS</p>
+          <h2 id="resultado-title">Uma proposta de valor construida para escalar.</h2>
+          <div className="proof-grid">
+            {provas.map(([valor, legenda]) => (
               <article key={legenda}>
                 <strong>{valor}</strong>
                 <p>{legenda}</p>
@@ -192,30 +120,65 @@ export default function App() {
           </div>
         </section>
 
+        <section className="frame section" id="modelo" aria-labelledby="modelo-title">
+          <p className="section-tag">MODELO OPERACIONAL</p>
+          <h2 id="modelo-title">Do desenho tecnico a monetizacao em tres etapas.</h2>
+          <div className="steps-grid">
+            {etapas.map((etapa) => (
+              <article key={etapa.titulo}>
+                <span>{etapa.passo}</span>
+                <h3>{etapa.titulo}</h3>
+                <p>{etapa.texto}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="frame section" id="publico" aria-labelledby="publico-title">
+          <p className="section-tag">PARA QUEM É</p>
+          <h2 id="publico-title">Feito para quem busca impacto com retorno e seguranca de execucao.</h2>
+          <div className="benefits-grid">
+            {beneficios.map((item) => {
+              const Icon = item.icon;
+              return (
+                <article key={item.titulo}>
+                  <Icon size={19} aria-hidden="true" />
+                  <h3>{item.titulo}</h3>
+                  <p>{item.texto}</p>
+                </article>
+              );
+            })}
+          </div>
+        </section>
+
+        <section className="frame section faq" id="faq" aria-labelledby="faq-title">
+          <p className="section-tag">DUVIDAS FREQUENTES</p>
+          <h2 id="faq-title">Perguntas comuns antes de iniciar.</h2>
+          <div className="faq-list">
+            {perguntas.map((item) => (
+              <details key={item.pergunta}>
+                <summary><CircleHelp size={16} aria-hidden="true" /> {item.pergunta}</summary>
+                <p>{item.resposta}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+
         <section className="frame cta" id="contato" aria-labelledby="cta-title">
-          <h2 id="cta-title">Acre como plataforma de bioeconomia de escala.</h2>
-          <p>Rio Branco concentra biodiversidade, logística e capacidade de integração com cadeias globais.</p>
-          <div>
-            <a className="btn solid" href="#topo">Iniciar conversa</a>
-            <a className="btn line" href="#parcerias">Tornar-se parceiro</a>
+          <p className="section-tag">PROXIMO PASSO</p>
+          <h2 id="cta-title">Receba um plano inicial para seu perfil em ate 48 horas uteis.</h2>
+          <p>Compartilhe seus objetivos e retornamos com escopo, cronograma e formato de parceria recomendado.</p>
+          <div className="cta-actions">
+            <a className="btn primary" href="#topo">Iniciar agora</a>
+            <a className="btn ghost" href="#modelo">Ver metodologia</a>
           </div>
         </section>
       </main>
 
       <footer className="footer">
-        <div className="frame footer-grid">
-          <div>
-            <p className="logo">Aliança Verde Amazônia</p>
-            <p>Transformando capital natural em desenvolvimento econômico com restauração de escala.</p>
-          </div>
-          <div>
-            <h3>Escritórios</h3>
-            <p><MapPin size={14} aria-hidden="true" /> Rio Branco, Acre - BR</p>
-            <p><Building2 size={14} aria-hidden="true" /> São Paulo, SP - BR</p>
-          </div>
-        </div>
-        <div className="frame footer-base">
-          <small>© 2026 Aliança Verde Amazônia. Todos os direitos reservados.</small>
+        <div className="frame footer-inner">
+          <p className="brand">Alianca Verde Amazonia</p>
+          <small>© 2026 - Projeto de restauracao produtiva com foco em bioeconomia de escala.</small>
         </div>
       </footer>
     </div>
