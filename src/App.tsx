@@ -90,7 +90,7 @@ export default function App() {
         <section className="hero" id="topo">
           <div className="frame hero-wrap">
             <p className="eyebrow"></p>
-            <h1>Transforme área degradada em um ativo regenerativo com retorno econômico.</h1>
+            <h1>Transforme área degradada em floresta produtiva e ativo regenerativo com retorno econômico.</h1>
             <p className="lead">
               A AVA estrutura projetos de restauração produtiva no Acre com execução local,
               governança institucional e comercialização em cadeias de alto valor.
