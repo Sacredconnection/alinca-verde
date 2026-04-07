@@ -72,7 +72,7 @@ export default function App() {
 
       <header className="topbar">
         <div className="frame topbar-inner">
-          <a className="brand" href="#topo">Aliança Verde Amazônia</a>
+          <a className="brand" href="#topo"><Leaf size={22} aria-hidden="true" className="brand-icon" />Aliança Verde Amazônia</a>
           <nav aria-label="Navegação principal">
             <ul className="menu">
               {navLinks.map((item) => (
