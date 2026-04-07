@@ -99,6 +99,7 @@ export default function App() {
               <a className="btn primary" href="#contato">Quero uma proposta</a>
               <a className="btn ghost" href="#modelo">Como funciona <ArrowRight size={16} aria-hidden="true" /></a>
             </div>
+            <div className="hero-forest" aria-hidden="true"></div>
             <ul className="trust-badges" aria-label="Credenciais">
               <li><CheckCircle2 size={16} aria-hidden="true" /> Due diligence simplificada</li>
               <li><Leaf size={16} aria-hidden="true" /> Modelo com impacto ambiental mensurável</li>
