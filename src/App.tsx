@@ -82,7 +82,7 @@ export default function App() {
       <header className="lp-header" id="topo">
         <div className="lp-wrap lp-header-row">
           <a className="lp-logo" href="#topo" aria-label="Aliança Verde Amazônia">
-            <img src="/assets/img/logo-alianca.png" alt="Logo Aliança Verde Amazônia" className="lp-logo-img" />
+            <img src="/logo-alianca.png" alt="Logo Aliança Verde Amazônia" className="lp-logo-img" />
           </a>
           <nav aria-label="Navegação principal">
             <ul className="lp-nav">
@@ -142,7 +142,7 @@ export default function App() {
           </article>
           <div className="lp-core-media">
             <img
-              src="/assets/img/transicao1.png"
+              src="/transicao1.png"
               alt="Área de pastagem com recuperação florestal em andamento"
               loading="lazy"
             />
@@ -220,7 +220,7 @@ export default function App() {
         <div className="lp-wrap lp-footer-grid">
           <div>
             <a className="lp-logo" href="#topo" aria-label="Aliança Verde Amazônia">
-              <img src="/assets/img/logo-alianca.png" alt="Logo Aliança Verde Amazônia" className="lp-logo-img" />
+              <img src="/logo-alianca.png" alt="Logo Aliança Verde Amazônia" className="lp-logo-img" />
             </a>
             <p>Floresta que produz. Terra que vale. Amazônia que fica.</p>
           </div>

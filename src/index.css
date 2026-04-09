@@ -181,7 +181,7 @@ summary:focus-visible {
   width: 100%;
   margin-inline: 0;
   border-radius: 0;
-  background-image: url('/assets/img/serene-river-flowing-through-lush-amazon-rainfores-2026-03-25-08-23-17-utc.JPG');
+  background-image: url('/hero-bg.JPG');
   background-size: cover;
   background-position: center;
   border-top: 1px solid rgba(255, 255, 255, 0.4);
@@ -775,4 +775,5 @@ h1 {
     scroll-behavior: auto !important;
   }
 }
+
 
