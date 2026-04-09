@@ -1,80 +1,91 @@
-﻿import {ArrowRight, CheckCircle2, CircleHelp, Leaf, ShieldCheck, Sprout, TrendingUp} from 'lucide-react';
+﻿import {useState} from 'react';
+import {CheckCircle2, CircleHelp, Menu, ShieldCheck, Sprout, TrendingUp, X} from 'lucide-react';
 
 const navLinks = [
-  {label: 'Modelo', href: '#modelo'},
   {label: 'Resultados', href: '#resultados'},
+  {label: 'Modelo', href: '#modelo'},
   {label: 'Para quem', href: '#publico'},
   {label: 'FAQ', href: '#faq'},
 ];
 
 const beneficios = [
   {
-    titulo: 'Receita recorrente com floresta em pé',
-    texto: 'Integramos produção, processamento e ativos ambientais para gerar fluxo de caixa de longo prazo.',
+    titulo: 'Restauração produtiva da floresta',
+    texto: 'Transformamos pastagem degradada em floresta nativa gerando bioeconomia real: açaí, cacau, madeira certificada, óleos, resinas e créditos de carbono.',
+    icon: Sprout,
+  },
+  {
+    titulo: 'Parceria sem investimento de capital',
+    texto: 'Fazendeiros e comunidades indígenas e ribeirinhas entram como parceiros. A floresta que cresce na sua terra gera renda crescente.',
     icon: TrendingUp,
   },
   {
-    titulo: 'Governança pronta para due diligence',
-    texto: 'Operação com rastreabilidade, métricas de impacto e conformidade para parceiros institucionais.',
+    titulo: 'Gestão integrada da cadeia',
+    texto: 'Produção, processamento e comercialização geridos pela AVA, com certificações FSC, Verra VCS+CCB e SIF desde o primeiro ano.',
     icon: ShieldCheck,
-  },
-  {
-    titulo: 'Execução local de ponta a ponta',
-    texto: 'Equipe técnica em campo no Acre com monitoramento contínuo e coordenação operacional centralizada.',
-    icon: Sprout,
   },
 ];
 
 const etapas = [
   {
     passo: '01',
-    titulo: 'Diagnóstico e desenho técnico',
-    texto: 'Levantamento agronômico, mapeamento de risco e plano de implantação por área.',
+    titulo: 'Restauração da floresta nativa',
+    texto: 'Em 10.000 hectares de pastagem degradada no Acre, restauramos floresta nativa para regeneração produtiva.',
   },
   {
     passo: '02',
-    titulo: 'Implantação produtiva regenerativa',
-    texto: 'Sistemas agroflorestais combinando espécies nativas e cadeias bioeconômicas de alta demanda.',
+    titulo: 'Transformação em bioeconomia',
+    texto: 'Integramos a floresta em cadeias de valor: açaí, cacau, madeira, óleos, resinas e créditos de carbono.',
   },
   {
     passo: '03',
-    titulo: 'Monetização e escala',
-    texto: 'Comercialização de produtos e créditos ambientais com governança para expansão regional.',
+    titulo: 'Gestão e comercialização',
+    texto: 'Toda a cadeia é gerida pela AVA, do campo ao mercado, com certificações e rastreabilidade.',
   },
 ];
 
 const provas = [
-  ['10.000 ha', 'em estruturação para restauração produtiva'],
-  ['500+ famílias', 'envolvidas no território ao longo da cadeia'],
-  ['100% rastreável', 'da origem ao ativo comercializado'],
-  ['3,5x potencial', 'de valorização patrimonial da terra'],
+  ['10.000 ha', 'de pastagem degradada no Acre'],
+  ['Bioeconomia ', 'açaí, cacau, madeira certificada, óleos, resinas'],
+  ['Certificações', 'FSC, Verra VCS+CCB e SIF desde o primeiro ano'],
+  ['Parceiros', 'fazendeiros e comunidades indígenas e ribeirinhas'],
 ];
 
 const perguntas = [
   {
-    pergunta: 'Qual perfil de parceiro faz sentido para a AVA?',
-    resposta: 'Estruturamos modelos para investidores, empresas compradoras de créditos e produtores com área disponível.',
+    pergunta: 'Quem pode ser parceiro da AVA?',
+    resposta: 'Fazendeiros e comunidades indígenas e ribeirinhas entram como parceiros sem investir capital. A floresta gera renda crescente.',
   },
   {
-    pergunta: 'Quando o projeto começa a gerar retorno?',
-    resposta: 'As primeiras receitas vêm da cadeia bioeconômica e o retorno acelera com o amadurecimento do portfólio de ativos ambientais.',
+    pergunta: 'O que vendemos além de créditos de carbono?',
+    resposta: 'Vendemos a floresta em vida: seus frutos, madeira, óleos, resinas e biodiversidade. O carbono é consequência.',
   },
   {
-    pergunta: 'Como a governança é garantida?',
-    resposta: 'Operamos com monitoramento contínuo, indicadores públicos de desempenho e auditorias externas por padrão.',
+    pergunta: 'Como a cadeia produtiva é gerida?',
+    resposta: 'Toda a cadeia — produção, processamento e comercialização — é gerida pela AVA com certificações desde o primeiro ano.',
   },
 ];
 
 export default function App() {
-  return (
-    <div className="site">
-      <a className="skip" href="#conteudo">Pular para conteúdo</a>
+  const [menuOpen, setMenuOpen] = useState(false);
 
-      <header className="topbar">
-        <div className="frame topbar-inner">
-          <a className="brand" href="#topo"><Leaf size={22} aria-hidden="true" className="brand-icon" />Aliança Verde Amazônia</a>
+  return (
+    <div className="lp-shell">
+      <a className="lp-skip" href="#conteudo">Pular para conteúdo</a>
+
+      <div className="lp-alert">
+        <div className="lp-wrap">
+          <p><b>Floresta que produz. Terra que vale. Amazônia que fica.</b></p>
+        </div>
+      </div>
+
+      <header className="lp-header" id="topo">
+        <div className="lp-wrap lp-header-row">
+          <a className="lp-logo" href="#topo" aria-label="Aliança Verde Amazônia">
+            <img src="/assets/img/logo-alianca.png" alt="Logo Aliança Verde Amazônia" className="lp-logo-img" />
+          </a>
           <nav aria-label="Navegação principal">
-            <ul className="menu">
+            <ul className="lp-nav">
               {navLinks.map((item) => (
                 <li key={item.href}>
                   <a href={item.href}>{item.label}</a>
@@ -82,38 +93,70 @@ export default function App() {
               ))}
             </ul>
           </nav>
-          <a className="btn mini" href="#contato">Falar com especialista</a>
+          <button
+            type="button"
+            className="lp-menu-toggle"
+            aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-nav"
+            onClick={() => setMenuOpen((prev) => !prev)}
+          >
+            {menuOpen ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
+          </button>
         </div>
+        <nav id="mobile-nav" aria-label="Navegação mobile" className={`lp-mobile-nav ${menuOpen ? 'is-open' : ''}`}>
+          <ul className="lp-mobile-list">
+            {navLinks.map((item) => (
+              <li key={item.href}>
+                <a href={item.href} onClick={() => setMenuOpen(false)}>{item.label}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </header>
 
-      <main id="conteudo">
-        <section className="hero" id="topo">
-          <div className="frame hero-wrap">
-            <p className="eyebrow"></p>
-            <h1>Transforme área degradada em floresta produtiva e ativo regenerativo com retorno econômico.</h1>
-            <p className="lead">
-              A AVA estrutura projetos de restauração produtiva no Acre com execução local,
-              governança institucional e comercialização em cadeias de alto valor.
-            </p>
-            <div className="hero-actions">
-              <a className="btn primary" href="#contato">Quero uma proposta</a>
-              <a className="btn ghost" href="#modelo">Como funciona <ArrowRight size={16} aria-hidden="true" /></a>
-            </div>
-            <div className="hero-forest" aria-hidden="true"></div>
-            <ul className="trust-badges" aria-label="Credenciais">
-              <li><CheckCircle2 size={16} aria-hidden="true" /> Due diligence simplificada</li>
-              <li><Leaf size={16} aria-hidden="true" /> Modelo com impacto ambiental mensurável</li>
-              <li><ShieldCheck size={16} aria-hidden="true" /> Governança e rastreabilidade integradas</li>
-            </ul>
+      <main id="conteudo" className="lp-main">
+        <section className="lp-hero">
+          <div className="lp-wrap lp-hero-grid">
+            <article className="lp-hero-copy">
+              <h1>Aliança Verde Amazônia</h1>
+              <p>
+                A Amazônia não precisa escolher entre floresta e renda. Esse é o ponto de partida do nosso projeto.
+              </p>
+            </article>
           </div>
         </section>
 
-        <section className="frame section" id="resultados" aria-labelledby="resultado-title">
-          <p className="section-tag">RESULTADOS ESPERADOS</p>
-          <h2 id="resultado-title">Uma proposta de valor construída para escalar.</h2>
-          <div className="proof-grid">
-            {provas.map(([valor, legenda]) => (
-              <article key={legenda}>
+        <section className="lp-wrap lp-core-focus" aria-labelledby="core-focus-title">
+          <article className="lp-core-content">
+            <p className="lp-kicker">NOSSO FOCO PRINCIPAL</p>
+            <h2 id="core-focus-title">Transformar áreas de pastagem devastadas em floresta produtiva.</h2>
+            <p>
+              O coração da AVA é recuperar terras degradadas e devolver vida ao solo com floresta nativa.
+              Esse processo gera restauração ambiental real e cria uma base econômica sustentável no território.
+            </p>
+            <p>
+              Onde antes havia improdutividade, implantamos sistemas que combinam regeneração, biodiversidade
+              e oportunidades de renda de longo prazo.
+            </p>
+          </article>
+          <div className="lp-core-media">
+            <img
+              src="/assets/img/transicao1.png"
+              alt="Área de pastagem com recuperação florestal em andamento"
+              loading="lazy"
+            />
+          </div>
+        </section>
+
+        <section className="lp-results-band" id="resultados" aria-labelledby="resultados-title">
+          <div className="lp-wrap lp-results-head">
+            <p className="lp-kicker">RESULTADOS ESPERADOS</p>
+            <h2 id="resultados-title">Uma proposta de valor construída para escalar.</h2>
+          </div>
+          <div className="lp-wrap lp-metrics-grid">
+            {provas.map(([valor, legenda], index) => (
+              <article key={legenda} className={`lp-metric-item lp-metric-item--${index + 1}`}>
                 <strong>{valor}</strong>
                 <p>{legenda}</p>
               </article>
@@ -121,29 +164,33 @@ export default function App() {
           </div>
         </section>
 
-        <section className="frame section" id="modelo" aria-labelledby="modelo-title">
-          <p className="section-tag">MODELO OPERACIONAL</p>
-          <h2 id="modelo-title">Do desenho técnico à monetização em três etapas.</h2>
-          <div className="steps-grid">
+        <section className="lp-wrap lp-model-track" id="modelo" aria-labelledby="modelo-title">
+          <div className="lp-model-head">
+            <p className="lp-kicker">MODELO OPERACIONAL</p>
+            <h2 id="modelo-title">Da restauração à bioeconomia em três etapas.</h2>
+          </div>
+          <ol className="lp-track-list">
             {etapas.map((etapa) => (
-              <article key={etapa.titulo}>
+              <li key={etapa.titulo} className="lp-track-step">
                 <span>{etapa.passo}</span>
                 <h3>{etapa.titulo}</h3>
                 <p>{etapa.texto}</p>
-              </article>
+              </li>
             ))}
-          </div>
+          </ol>
         </section>
 
-        <section className="frame section" id="publico" aria-labelledby="publico-title">
-          <p className="section-tag">PARA QUEM É</p>
-          <h2 id="publico-title">Feito para quem busca impacto com retorno e segurança de execução.</h2>
-          <div className="benefits-grid">
-            {beneficios.map((item) => {
+        <section className="lp-wrap lp-public-mosaic" id="publico" aria-labelledby="publico-title">
+          <div className="lp-public-intro">
+            <p className="lp-kicker">PARA QUEM É</p>
+            <h2 id="publico-title">Para fazendeiros e comunidades que querem floresta produtiva sem escolher entre floresta e renda.</h2>
+          </div>
+          <div className="lp-public-columns">
+            {beneficios.map((item, index) => {
               const Icon = item.icon;
               return (
-                <article key={item.titulo}>
-                  <Icon size={19} aria-hidden="true" />
+                <article key={item.titulo} className={`lp-public-card lp-public-card--${index + 1}`}>
+                  <Icon size={20} aria-hidden="true" />
                   <h3>{item.titulo}</h3>
                   <p>{item.texto}</p>
                 </article>
@@ -152,10 +199,13 @@ export default function App() {
           </div>
         </section>
 
-        <section className="frame section faq" id="faq" aria-labelledby="faq-title">
-          <p className="section-tag">DÚVIDAS FREQUENTES</p>
-          <h2 id="faq-title">Perguntas comuns antes de iniciar.</h2>
-          <div className="faq-list">
+        <section className="lp-wrap lp-faq-split" id="faq" aria-labelledby="faq-title">
+          <header className="lp-faq-intro">
+            <p className="lp-kicker">DÚVIDAS FREQUENTES</p>
+            <h2 id="faq-title">Perguntas comuns antes de iniciar.</h2>
+            <p>Respostas diretas para as decisões iniciais de parceria e execução.</p>
+          </header>
+          <div className="lp-faq-list">
             {perguntas.map((item) => (
               <details key={item.pergunta}>
                 <summary><CircleHelp size={16} aria-hidden="true" /> {item.pergunta}</summary>
@@ -164,22 +214,29 @@ export default function App() {
             ))}
           </div>
         </section>
-
-        <section className="frame cta" id="contato" aria-labelledby="cta-title">
-          <p className="section-tag">PRÓXIMO PASSO</p>
-          <h2 id="cta-title">Receba um plano inicial para seu perfil em até 48 horas úteis.</h2>
-          <p>Compartilhe seus objetivos e retornamos com escopo, cronograma e formato de parceria recomendado.</p>
-          <div className="cta-actions">
-            <a className="btn primary" href="#topo">Iniciar agora</a>
-            <a className="btn ghost" href="#modelo">Ver metodologia</a>
-          </div>
-        </section>  
       </main>
 
-      <footer className="footer">
-        <div className="frame footer-inner">
-          <p className="brand">Aliança Verde Amazônia</p>
-          <small>© 2026 - Projeto de restauração produtiva com foco em bioeconomia de escala.</small>
+      <footer className="lp-footer" id="contato">
+        <div className="lp-wrap lp-footer-grid">
+          <div>
+            <a className="lp-logo" href="#topo" aria-label="Aliança Verde Amazônia">
+              <img src="/assets/img/logo-alianca.png" alt="Logo Aliança Verde Amazônia" className="lp-logo-img" />
+            </a>
+            <p>Floresta que produz. Terra que vale. Amazônia que fica.</p>
+          </div>
+          <nav aria-label="Navegação de rodapé">
+            <ul className="lp-footer-links">
+              {navLinks.map((item) => (
+                <li key={item.href}>
+                  <a href={item.href}>{item.label}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <div className="lp-footer-contact">
+            <p>Falar com especialista</p>
+            <a className="lp-btn lp-btn--sm" href="#topo">Iniciar conversa</a>
+          </div>
         </div>
       </footer>
     </div>
