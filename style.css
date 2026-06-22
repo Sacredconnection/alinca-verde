@@ -561,6 +561,11 @@ img { display: block; max-width: 100%; }
   letter-spacing: 0.04em; text-decoration: none; transition: color .2s;
 }
 .footer-contacts a:hover { color: var(--creme); }
+.footer-privacy {
+  font-size: var(--t-label); color: rgba(245,240,232,.45);
+  letter-spacing: 0.04em; text-decoration: none; transition: color .2s;
+}
+.footer-privacy:hover { color: var(--creme); }
 
 /* ==========================================================================
    17. RESPONSIVE
