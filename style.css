@@ -200,7 +200,7 @@ img { display: block; max-width: 100%; }
   padding-bottom: var(--pad-y);
 }
 .hero-content > * { max-width: var(--max); margin-left: auto; margin-right: auto; }
-.hero-logo { height: 160px; width: auto; margin: 0 auto 3rem; }
+.hero-logo { height: 240px; width: auto; margin: 0 auto 3rem; }
 .hero-content > div { text-align: center; }
 .hero-kicker {
   font-weight: 700; font-size: var(--t-eyebrow);
@@ -600,7 +600,7 @@ img { display: block; max-width: 100%; }
   .nav-links a { display: block; padding: 1rem var(--pad-x); }
 
   .nav-logo { height: 20px; }
-  .hero-logo { height: 128px; }
+  .hero-logo { height: 192px; }
   .manifesto-cols { grid-template-columns: 1fr; }
   .tese-cols { grid-template-columns: 1fr; }
   .pilares-bento { grid-template-columns: 1fr 1fr; }
@@ -617,7 +617,7 @@ img { display: block; max-width: 100%; }
   .footer-text { text-align: left; }
 }
 @media (max-width: 480px) {
-  .hero-logo { height: 96px; }
+  .hero-logo { height: 144px; }
   .pilares-bento { grid-template-columns: 1fr; }
   .impacto-bento { grid-template-columns: 1fr; }
   .impacto-card:nth-child(5) { grid-column: span 1; }
