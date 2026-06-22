@@ -1,63 +1,491 @@
-﻿<!doctype html>
-<html lang="pt-BR" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-    <meta name="author" content="Aliança Verde Amazônia" />
-    <meta name="theme-color" content="#052C01" />
-    <meta
-      name="description"
-      content="Aliança Verde Amazônia: restauração florestal, bioeconomia e governança para desenvolvimento de longo prazo no Acre."
-    />
-    <link rel="canonical" href="https://aliancaverde.com.br/" />
-    <link rel="icon" type="image/png" href="/logo-alianca.png" />
+<!--
+  ATENÇÃO — CONVERSÃO PARA TEMA WORDPRESS
+  Todos os atributos `src` (imagens/ícones) deste arquivo e toda função `url()`
+  em style.css apontam para caminhos relativos (./fontes, ./fotos, ./icons,
+  ./logotipo). Na conversão final, envolver cada um desses caminhos com
+  <?php echo get_template_directory_uri(); ?>/ removendo o prefixo "./".
+  Exemplo: ./fotos/aerea.png  vira  <?php echo get_template_directory_uri(); ?>/fotos/aerea.png
+-->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aliança Verde Amazônia</title>
+  <link rel="icon" type="image/svg+xml" href="./logotipo/simbolo/SVG/alianca-verde-simbolo-colorido.svg" />
+  <link rel="stylesheet" href="./style.css" />
 
-    <meta property="og:type" content="website" />
-    <meta property="og:locale" content="pt_BR" />
-    <meta property="og:site_name" content="Aliança Verde Amazônia" />
-    <meta property="og:title" content="Aliança Verde Amazônia | Restauração Produtiva e Bioeconomia" />
-    <meta
-      property="og:description"
-      content="Transformamos áreas de pastagem degradadas em floresta produtiva com bioeconomia, rastreabilidade e governança."
-    />
-    <meta property="og:url" content="https://aliancaverde.com.br/" />
-    <meta property="og:image" content="https://aliancaverde.com.br/og-image.png" />
+  <!-- WORDPRESS HOOK: inserir <?php wp_head(); ?> imediatamente antes do fechamento de </head> -->
+</head>
+<!-- WORDPRESS HOOK: a tag <body> abaixo deverá receber <?php body_class(); ?> para herdar as classes dinâmicas do WordPress -->
+<body>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Aliança Verde Amazônia | Restauração Produtiva e Bioeconomia" />
-    <meta
-      name="twitter:description"
-      content="Transformamos áreas de pastagem degradadas em floresta produtiva com bioeconomia, rastreabilidade e governança."
-    />
-    <meta name="twitter:image" content="https://aliancaverde.com.br/og-image.png" />
+<!-- ==========================================================================
+     01. NAV
+     WORDPRESS: parte de header.php — logo via Custom Logo do Customizer;
+     itens de .nav-links podem virar o Menu primário (wp_nav_menu).
+     ========================================================================== -->
+<header>
+  <nav class="nav">
+    <a href="#inicio">
+      <img class="nav-logo"
+           src="./logotipo/SVG/alianca-verde-horizontal-monocromatico.svg"
+           alt="Aliança Verde Amazônia" />
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menu">
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#manifesto">Sobre</a></li>
+      <li><a href="#pilares">O Projeto</a></li>
+      <li><a href="#impacto">Impacto</a></li>
+      <li><a href="#equipe">Equipe</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Aliança Verde Amazônia",
-        "url": "https://aliancaverde.com.br/",
-        "logo": "https://aliancaverde.com.br/logo-alianca.png",
-        "description": "Restauração produtiva de áreas degradadas com foco em floresta nativa, bioeconomia e governança."
-      }
-    </script>
+<main>
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Aliança Verde Amazônia",
-        "url": "https://aliancaverde.com.br/",
-        "inLanguage": "pt-BR"
-      }
-    </script>
+<!-- ==========================================================================
+     02. HERO
+     ACF: Repeater "Slides do Hero" (Imagem de Fundo, Texto Alternativo) +
+     Campos de Texto (Kicker, Título, Subtítulo)
+     ========================================================================== -->
+<section class="hero" id="inicio">
+  <div class="hero-carousel">
+    <div class="hero-slide active">
+      <img src="./fotos/aerea.png" alt="Vista aérea da floresta amazônica" />
+    </div>
+    <div class="hero-slide">
+      <img src="./fotos/aerea-2.png" alt="Floresta amazônica — vista aérea" />
+    </div>
+    <div class="hero-slide">
+      <img src="./fotos/aerea-3.png" alt="Mosaico florestal — vista aérea" />
+    </div>
+    <div class="hero-slide">
+      <img src="./fotos/close-arvore.png" alt="Detalhe de espécie nativa amazônica" />
+    </div>
+    <div class="hero-slide">
+      <img src="./fotos/acai.png" alt="Palmeira de açaí em sistema agroflorestal" />
+    </div>
+    <div class="hero-slide">
+      <img src="./fotos/foto-maos-av.png" alt="Terra restaurada — mãos" />
+    </div>
+  </div>
 
-    <title>Aliança Verde Amazônia | Restauração Produtiva e Bioeconomia</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <noscript>Ative o JavaScript para acessar a experiência completa do site.</noscript>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <div>
+      <img class="hero-logo"
+           src="./logotipo/SVG/alianca-verde-horizontal-monocromatico.svg"
+           alt="Aliança Verde Amazônia" />
+      <p class="hero-kicker">Bioeconomia · Restauração · Impacto</p>
+      <h1 class="hero-title">Aliança Verde <em>Amazônia</em></h1>
+      <p class="hero-subtitle">Convertendo passivo ambiental em ativo produtivo.<br/>Com raiz, retorno e resultado.</p>
+    </div>
+  </div>
+
+  <div class="hero-fade"></div>
+
+  <div class="hero-dots">
+    <button class="hero-dot active" aria-label="Foto 1"></button>
+    <button class="hero-dot" aria-label="Foto 2"></button>
+    <button class="hero-dot" aria-label="Foto 3"></button>
+    <button class="hero-dot" aria-label="Foto 4"></button>
+    <button class="hero-dot" aria-label="Foto 5"></button>
+    <button class="hero-dot" aria-label="Foto 6"></button>
+  </div>
+</section>
+
+<!-- Botão "Voltar ao Topo" — fica visível depois que a primeira dobra
+     (hero) sai da tela (IntersectionObserver, ver main.js) -->
+<button class="back-to-top" id="back-to-top" type="button" aria-label="Voltar ao topo">
+  <img src="./icons/bold/arrow-up-bold.svg" alt="" aria-hidden="true" />
+</button>
+
+<!-- ==========================================================================
+     03. MANIFESTO
+     ACF: Eyebrow (Texto) + Intro (Texto) + Repeater "Colunas do Manifesto"
+     (Parágrafo) + Tagline (Texto)
+     ========================================================================== -->
+<section class="section manifesto" id="manifesto">
+  <div class="wrap">
+    <span class="eyebrow eyebrow--terra">Manifesto</span>
+    <p class="manifesto-intro">A Aliança Verde não nasce de promessas fáceis. Nasce de uma constatação objetiva.</p>
+    <div class="manifesto-cols">
+      <p>Há milhões de hectares no Brasil com potencial produtivo represado por passivo ambiental, por falta de planejamento ou por ausência de capital e operação técnica. Atuamos exatamente nesse ponto de ruptura. Com expertise em engenharia florestal, direito agrário e mercados de impacto, estruturamos parcerias fundiárias de longo prazo que convertem áreas ociosas em ativos produtivos regularizados.</p>
+      <p>Nossa operação é técnica, mensurável e comprometida com prazos. Cada propriedade recebe um plano personalizado, executado por equipe especializada, com acompanhamento contínuo e prestação de contas transparente. Somos parceiros de construção — não de projetos de impacto sem lastro. Cada talhão implantado e cada crédito de carbono certificado é resultado de trabalho estruturado, planejado e comprometido com o longo prazo.</p>
+    </div>
+    <p class="manifesto-tagline">É assim que a terra produz — com raiz, retorno e resultado.</p>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     04. TESE — Problema / Abordagem
+     ACF: Eyebrow + Título da Seção + 2x Grupo "Card" (Ícone, Título,
+     Repeater de Itens de Lista)
+     ========================================================================== -->
+<section class="section tese" id="tese">
+  <div class="wrap">
+    <span class="eyebrow">Tese de Atuação</span>
+    <h2 class="heading">Do Passivo Ambiental<br/>à Bioeconomia Integrada</h2>
+    <div class="tese-cols">
+      <div class="tese-card">
+        <div class="tese-card-head">
+          <img class="tese-card-head-icone" src="./icons/bold/warning-bold.svg" alt="" aria-hidden="true" />
+          <h3 class="tese-card-head-titulo">O Contexto</h3>
+        </div>
+        <div class="tese-card-body">
+          <ul>
+            <li>Extensas pastagens degradadas no Brasil bloqueiam crédito rural e desvalorizam propriedades por ausência de regularização ambiental.</li>
+            <li>Comunidades indígenas detentoras de floresta preservada raramente contam com estrutura para monetizá-la de forma legítima e sustentável.</li>
+            <li>Restauração convencional foca apenas no plantio — sem processamento e acesso a mercados, a floresta restaurada não gera retorno ao proprietário.</li>
+            <li>Sem alternativa econômica viável, o desmatamento permanece racionalmente atrativo para famílias sem outra opção de renda.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tese-card tese-card--solucao">
+        <div class="tese-card-head">
+          <img class="tese-card-head-icone" src="./icons/bold/sparkle-bold.svg" alt="" aria-hidden="true" />
+          <h3 class="tese-card-head-titulo">Nossa Abordagem</h3>
+        </div>
+        <div class="tese-card-body">
+          <ul>
+            <li>AVA assume integralmente o CAPEX e o risco operacional — parceiros contribuem com o território e recebem participação direta na receita.</li>
+            <li>Cada propriedade recebe planejamento silvicultural personalizado, regularização ambiental completa e acesso estruturado a mercados.</li>
+            <li>Integração vertical — da floresta ao processamento agroindustrial — retém a margem dentro do projeto e gera retorno real ao parceiro.</li>
+            <li>Regularização via CAR e PRA converte passivo em ativo produtivo, sem custo algum ao proprietário ou à comunidade.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     05. PILARES
+     ACF: Eyebrow + Título da Seção + Repeater "Pilares de Receita" (Número,
+     Ícone, Nome, Badge, Prazo, Descrição)
+     ========================================================================== -->
+<section class="section pilares" id="pilares">
+  <div class="wrap">
+    <div class="pilares-header">
+      <span class="eyebrow eyebrow--terra">Os 5 Pilares de Receita</span>
+      <h2 class="heading heading--light">Bioeconomia Integrada<br/>de Longo Prazo</h2>
+    </div>
+    <div class="pilares-bento">
+
+      <div class="pilar">
+        <div class="pilar-numero">Pilar 01</div>
+        <img class="pilar-icone" src="./icons/bold/leaf-bold.svg" alt="" aria-hidden="true" />
+        <div class="pilar-name">Carbono ARR</div>
+        <span class="pilar-badge">Sequestro Certificado</span>
+        <span class="pilar-prazo">Curto Prazo · Carência</span>
+        <p class="pilar-descricao">Sequestro real e incremental. Certificação Verra VCS+CCB VM0047 v1.1, aprovada pelo ICVCM como CCP-eligible. Estabiliza o fluxo de caixa durante a carência, antes da maturação dos pilares agrícolas.</p>
+      </div>
+
+      <div class="pilar">
+        <div class="pilar-numero">Pilar 02</div>
+        <img class="pilar-icone" src="./icons/bold/tree-palm-bold.svg" alt="" aria-hidden="true" />
+        <div class="pilar-name">Açaí</div>
+        <span class="pilar-badge">Processamento Próprio</span>
+        <span class="pilar-prazo">Médio Prazo · SAF</span>
+        <p class="pilar-descricao">Zona três. Polpa congelada e pó liofilizado de alto valor. Fábrica própria retém integralmente a margem industrial. Receita crescente com a maturação do sistema agroflorestal.</p>
+      </div>
+
+      <div class="pilar">
+        <div class="pilar-numero">Pilar 03</div>
+        <img class="pilar-icone" src="./icons/bold/coffee-bean-bold.svg" alt="" aria-hidden="true" />
+        <div class="pilar-name">Cacau</div>
+        <span class="pilar-badge">Single Origin Orgânico</span>
+        <span class="pilar-prazo">Médio Prazo · SAF</span>
+        <p class="pilar-descricao">Zona quatro. Líquor single origin orgânico Amazônia. Processamento próprio retém a margem industrial. Receita escalonada com a maturação do plantio clonal.</p>
+      </div>
+
+      <div class="pilar">
+        <div class="pilar-numero">Pilar 04</div>
+        <img class="pilar-icone" src="./icons/bold/tree-evergreen-bold.svg" alt="" aria-hidden="true" />
+        <div class="pilar-name">Madeira Nativa Z2</div>
+        <span class="pilar-badge">Ciclos Complementares</span>
+        <span class="pilar-prazo">Longo Prazo · Silvicultura</span>
+        <p class="pilar-descricao">Zona dois. Certificação FSC. Três ciclos complementares: Paricá (curto), Freijó (médio) e Guanandi (longo). O sistema de rodízio garante cobertura florestal contínua e fluxo de caixa perpétuo ao longo de toda a vida do projeto.</p>
+      </div>
+
+      <div class="pilar">
+        <div class="pilar-numero">Pilar 05</div>
+        <img class="pilar-icone" src="./icons/bold/farm-bold.svg" alt="" aria-hidden="true" />
+        <div class="pilar-name">Madeira Silvopastoril</div>
+        <span class="pilar-badge">Integração Produtiva</span>
+        <span class="pilar-prazo">Longo Prazo · Integrado</span>
+        <p class="pilar-descricao">Zona cinco. Espécies madeireiras nativas em densidades reduzidas, integradas a pastagens ativas. Floresta e pecuária coexistindo em escala real. Renda adicional sem interromper a atividade agropecuária do parceiro.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     06. TERRITORIAL
+     ACF: Imagem de Fundo + Eyebrow + Título da Seção + Repeater "Eixos
+     Territoriais" (Eixo, Título, Texto)
+     ========================================================================== -->
+<section class="section territorial" id="como-operamos">
+  <div class="territorial-bg">
+    <img src="./fotos/acai.png" alt="" aria-hidden="true" />
+  </div>
+  <div class="territorial-bg-overlay"></div>
+  <div class="wrap">
+    <div class="territorial-inner">
+      <span class="eyebrow eyebrow--terra">Estratégia Territorial</span>
+      <h2 class="heading heading--light">Dois Eixos. Uma Arquitetura.</h2>
+      <div class="territorial-grid">
+        <div class="territorial-card">
+          <div class="territorial-card-head territorial-card-head--eixo1">
+            <div class="territorial-card-eixo">Eixo 1 · Rodoviário</div>
+            <div class="territorial-card-titulo">Proprietários Rurais<br/>Rio Branco – Tarauacá</div>
+          </div>
+          <div class="territorial-card-body">
+            <p>Propriedades com passivo ambiental e logística rodoviária (BR-364). A AVA regulariza a propriedade perante CAR e PRA, convertendo passivo em ativo produtivo. O IMAC permite recomposição de Reserva Legal via SAFs e manejo em rodízio — transformando a área de RL em fonte de renda legalizada. Onde há pasto ativo, a integração silvipastoril mantém a pecuária enquanto introduz o componente madeireiro.</p>
+          </div>
+        </div>
+        <div class="territorial-card">
+          <div class="territorial-card-head territorial-card-head--eixo2">
+            <div class="territorial-card-eixo">Eixo 2 · Fluvial</div>
+            <div class="territorial-card-titulo">Comunidades Indígenas<br/>e Ribeirinhas · Calha dos Rios</div>
+          </div>
+          <div class="territorial-card-body">
+            <p>Territórios com logística predominantemente fluvial. Recuperação de áreas degradadas dentro dos territórios — pastos abandonados pré-demarcação, lavouras antigas — combinada com a valorização da floresta preservada já existente. Total autonomia territorial: a AVA entra com o CAPEX, infraestrutura, acesso a mercados e capacitação técnica continuada.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     07. IMPACTO
+     ACF: Eyebrow + Título da Seção + Repeater "Indicadores de Impacto"
+     (Ícone, Valor, Label, Descrição) + Repeater "Comunidades Parceiras"
+     (Nome, Detalhe)
+     ========================================================================== -->
+<section class="section impacto" id="impacto">
+  <div class="wrap">
+    <span class="eyebrow eyebrow--terra">Impacto Socioambiental</span>
+    <h2 class="heading heading--light">Floresta como Ativo.<br/>Comunidades como Parceiras.</h2>
+    <div class="impacto-bento">
+      <div class="impacto-card">
+        <img class="impacto-icone" src="./icons/bold/tree-bold.svg" alt="" aria-hidden="true" />
+        <div class="impacto-valor">Grande Escala</div>
+        <div class="impacto-label">Restauração Florestal</div>
+        <div class="impacto-descricao">Espécies nativas do bioma amazônico. Criação de corredores ecológicos entre florestas e reservas no Acre.</div>
+      </div>
+      <div class="impacto-card">
+        <img class="impacto-icone" src="./icons/bold/cloud-arrow-up-bold.svg" alt="" aria-hidden="true" />
+        <div class="impacto-valor">Verificável</div>
+        <div class="impacto-label">Crédito ARR</div>
+        <div class="impacto-descricao">Sequestro real e incremental. Verra VCS+CCB VM0047. Metodologia aprovada pelo ICVCM como CCP-eligible. Verificação independente periódica.</div>
+      </div>
+      <div class="impacto-card">
+        <img class="impacto-icone" src="./icons/bold/users-three-bold.svg" alt="" aria-hidden="true" />
+        <div class="impacto-valor">Inclusão</div>
+        <div class="impacto-label">Famílias Parceiras</div>
+        <div class="impacto-descricao">Renda monetária estável gerada por terra anteriormente improdutiva ou floresta sem acesso a mercados.</div>
+      </div>
+      <div class="impacto-card">
+        <img class="impacto-icone" src="./icons/bold/hard-hat-bold.svg" alt="" aria-hidden="true" />
+        <div class="impacto-valor">Empregos Locais</div>
+        <div class="impacto-label">Geração de Renda</div>
+        <div class="impacto-descricao">Postos de trabalho diretos e indiretos formalizados no Acre, em uma das regiões com menor índice de emprego rural formal do Brasil.</div>
+      </div>
+      <div class="impacto-card">
+        <img class="impacto-icone" src="./icons/bold/handshake-bold.svg" alt="" aria-hidden="true" />
+        <div class="impacto-valor">FPIC</div>
+        <div class="impacto-label">Autonomia Territorial</div>
+        <div class="impacto-descricao">Consulta Livre, Prévia e Informada com as comunidades parceiras. Autonomia decisória e territorial plena. A AVA entra com o CAPEX; as comunidades determinam o ritmo e participam diretamente da receita.</div>
+      </div>
+    </div>
+    <div class="comunidades-box">
+      <div class="comunidades-titulo">Comunidades Parceiras Formalizadas</div>
+      <div class="comunidades-grid">
+        <div>
+          <div class="comunidades-nome">Yawanawá</div>
+          <div class="comunidades-detalhe">Terra Indígena Rio Gregório · Tarauacá</div>
+        </div>
+        <div>
+          <div class="comunidades-nome">Ashaninka</div>
+          <div class="comunidades-detalhe">Instituto Yorenka Tasorentsi · Juruá</div>
+        </div>
+        <div>
+          <div class="comunidades-nome">Kuntanawa</div>
+          <div class="comunidades-detalhe">Processo de demarcação · Cacique Osmildo · restauração e fortalecimento territorial</div>
+        </div>
+        <div>
+          <div class="comunidades-nome">RESEX Alto Juruá</div>
+          <div class="comunidades-detalhe">Reserva Extrativista · Marechal Thaumaturgo</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     08. EQUIPE
+     ACF: Eyebrow + Título da Seção + Repeater "Membros da Equipe" (Nome,
+     Cargo, Bio)
+     ========================================================================== -->
+<section class="section equipe" id="equipe">
+  <div class="wrap">
+    <span class="eyebrow">Equipe de Execução</span>
+    <h2 class="heading">Executado por quem<br/>já fez no território</h2>
+    <div class="equipe-bento">
+      <div class="equipe-card">
+        <div class="equipe-nome">Frans Pagnier</div>
+        <div class="equipe-cargo">Diretor Executivo</div>
+        <div class="equipe-bio">Fundador Conexão Ancestral — parcerias com comunidades indígenas do Acre. Presidente Instituto Serra do Mar, Lumiar/RJ.</div>
+      </div>
+      <div class="equipe-card">
+        <div class="equipe-nome">Derek Gallo</div>
+        <div class="equipe-cargo">Consultor Estratégico — Finanças Sustentáveis &amp; Bioeconomia</div>
+        <div class="equipe-bio">Co-fundador Awí Superfoods, vencedor WEF Amazon Bioeconomy Challenge. Ex-UNEP FI. Fundador Dharma Investments. Master in Climate and Society, Columbia Climate School.</div>
+      </div>
+      <div class="equipe-card">
+        <div class="equipe-nome">Benki Piyãko</div>
+        <div class="equipe-cargo">Consultor Comunitário · Liderança Ashaninka</div>
+        <div class="equipe-bio">Instituto Yorenka Tasorentsi. Extenso trabalho de reflorestamento comunitário no território Ashaninka. Prêmio Niwano da Paz 2026.</div>
+      </div>
+      <div class="equipe-card">
+        <div class="equipe-nome">Marlisson Borges</div>
+        <div class="equipe-cargo">Responsável Técnica de Campo</div>
+        <div class="equipe-bio">Nativo do Pará, longa experiência no ISA e território Xingu. Manejo florestal comunitário e SAFs em grande escala.</div>
+      </div>
+      <div class="equipe-card">
+        <div class="equipe-nome">Denise Bittencourt Amador</div>
+        <div class="equipe-cargo">Técnico Florestal · Agroecóloga</div>
+        <div class="equipe-bio">Longa experiência de campo com o povo Yawanawá no Rio Gregório. Design e implementação de SAFs adaptados à realidade amazônica.</div>
+      </div>
+      <div class="equipe-card">
+        <div class="equipe-nome">Pedro &amp; Tom Adnet Moura — Engenheiros Florestais</div>
+        <div class="equipe-cargo">Reflorestamento · Extração Sustentável · Logística Fluvial</div>
+        <div class="equipe-bio">Pedro: reflorestamento e extração sustentável de madeira nativa no Rio Purus. Tom: logística fluvial especializada em rios remotos do Acre e Amazonas.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     09. ODS / ALINHAMENTO
+     ACF: Eyebrow + Título da Seção + Repeater "Itens de Alinhamento"
+     (Número/Sigla, Nome, Métrica)
+     ========================================================================== -->
+<section class="section ods" id="agenda">
+  <div class="wrap">
+    <span class="eyebrow eyebrow--terra">Alinhamento Estratégico</span>
+    <h2 class="heading heading--light heading--compact">Agenda 2030 · NDC Brasil · SBCE · EUDR</h2>
+    <div class="ods-grid">
+      <div class="ods-item">
+        <div class="ods-numero">ODS 1</div>
+        <div class="ods-name">Erradicação da Pobreza</div>
+        <div class="ods-metric">Famílias parceiras com renda monetária estável</div>
+      </div>
+      <div class="ods-item">
+        <div class="ods-numero">ODS 2</div>
+        <div class="ods-name">Fome Zero</div>
+        <div class="ods-metric">Módulos comunitários com programa alimentar desde a implantação</div>
+      </div>
+      <div class="ods-item">
+        <div class="ods-numero">ODS 8</div>
+        <div class="ods-name">Trabalho Decente</div>
+        <div class="ods-metric">Empregos formalizados diretos e indiretos no Acre</div>
+      </div>
+      <div class="ods-item">
+        <div class="ods-numero">ODS 13</div>
+        <div class="ods-name">Ação Climática</div>
+        <div class="ods-metric">Sequestro real e incremental. Certificação Verra VCS+CCB.</div>
+      </div>
+      <div class="ods-item">
+        <div class="ods-numero">ODS 15</div>
+        <div class="ods-name">Vida Terrestre</div>
+        <div class="ods-metric">Mosaico florestal com espécies nativas. Corredores ecológicos no bioma.</div>
+      </div>
+      <div class="ods-item">
+        <div class="ods-numero">NDC</div>
+        <div class="ods-name">Acordo de Paris</div>
+        <div class="ods-metric">Restauração florestal na Amazônia alinhada ao PPCDAm e PLANAVEG.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     10. CTA
+     ACF: Label + Título + Texto + Repeater "Contatos" (Cargo, Nome, Detalhe)
+     ========================================================================== -->
+<section class="section cta" id="contato">
+  <div class="wrap">
+    <div class="cta-grid">
+      <div>
+        <p class="cta-label">Próximos Passos</p>
+        <h2 class="cta-title">Construindo floresta<br/>com raiz</h2>
+        <p class="cta-text">A base territorial está consolidada. As parcerias com comunidades indígenas estão formalizadas. A constituição da SPE e a estrutura de garantia estão em finalização. O pacote de diligência completo — modelo financeiro bottom-up, documentação FPIC, protocolos silviculturais e detalhamento de CAPEX por zona — está disponível para parceiros institucionais.</p>
+      </div>
+      <div class="cta-contact">
+        <div class="cta-contact-item">
+          <strong>Diretor Executivo</strong>
+          <p>Frans Pagnier<br/>Aliança Verde Amazônia</p>
+        </div>
+        <div class="cta-contact-item">
+          <strong>Consultor Estratégico</strong>
+          <p>Derek Gallo<br/>Finanças Sustentáveis &amp; Bioeconomia</p>
+        </div>
+        <div class="cta-contact-item">
+          <strong>Financiamento</strong>
+          <p>BNDES Fundo Clima<br/>Após constituição da SPE</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ==========================================================================
+     11. FOOTER
+     ACF Options Page ou Customizer: Telefone, E-mail, Texto de Copyright
+     ========================================================================== -->
+<footer class="footer">
+  <img class="footer-logo"
+       src="./logotipo/SVG/alianca-verde-horizontal-monocromatico.svg"
+       alt="Aliança Verde Amazônia" />
+  <div class="footer-contacts">
+    <a href="tel:+5522988178050">Tel. (22) 98817&nbsp;8050</a>
+    <a href="mailto:contato@aliancaverde.com.br">contato@aliancaverde.com.br</a>
+  </div>
+  <p class="footer-text">
+    © 2026 Aliança Verde Amazônia<br/>
+    Aliança Verde Amazônia – SPE Ltda · CNPJ 67.295.011/0001-17<br/>
+    Bioeconomia · Restauração · Impacto
+  </p>
+</footer>
+
+<!-- ==========================================================================
+     12. COOKIE BANNER (LGPD)
+     Aviso de consentimento; aceite é persistido em localStorage (main.js).
+     ========================================================================== -->
+<div class="cookie-banner" id="cookie-banner">
+  <p class="cookie-banner-text">
+    Usamos cookies para melhorar sua experiência neste site. Ao continuar
+    navegando, você concorda com nossa
+    <a href="./politica-de-privacidade.html">Política de Privacidade</a>.
+  </p>
+  <button class="cookie-banner-accept" id="cookie-banner-accept" type="button">Aceitar</button>
+</div>
+
+<script src="./main.js"></script>
+
+<!-- WORDPRESS HOOK: inserir <?php wp_footer(); ?> imediatamente antes do fechamento de </body> -->
+</body>
 </html>
